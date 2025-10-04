@@ -6,11 +6,12 @@ from typing import List
 import yaml
 
 class Datapoint:
-    def __init__(self, row: int, name: str, unit_name: str, unit_id: int, function_group: int, 
+    def __init__(self, row: int, register_address: int, name: str, unit_name: str, unit_id: int, function_group: int, 
                 function_number: int, datapoint: int, type_name: str, decimal: int, 
                 steps: int, min: int, max: int, writable: bool, unit: str, text: dict[int, str]):
         self.row = row
-        self.unit_name = unit_name
+        self.register_address = register_address
+        self.unit_name = unit_name # is compared against UnitName column in xls
         self.unit_id = unit_id
         self.function_group = function_group
         self.function_number = function_number
@@ -115,17 +116,20 @@ class Datapoint:
         return res
 
 class Filter:
-    def __init__(self, unit_names: List[str] = None, unit_ids: List[int] = None, rows: List[int] = None):
+    def __init__(self, unit_names: List[str] = None, unit_ids: List[int] = None, rows: List[int] = None, register_addresses: List[int] = None):
         self.unit_names = unit_names
         self.unit_ids = unit_ids
         self.rows = rows
+        self.register_addresses = register_addresses
 
-    def accepts(self, unit_name: str, unit_id: str, row: int) -> bool:
+    def accepts(self, unit_name: str, unit_id: str, row: int, register_address: int) -> bool:
         if self.unit_names and unit_name not in self.unit_names:
             return False
         if self.unit_ids and unit_id not in self.unit_ids:
             return False
         if self.rows and row not in self.rows:
+            return False
+        if self.register_addresses and register_address not in self.register_addresses:
             return False
         return True
 
@@ -166,19 +170,22 @@ def parse_datapoints(wb: Workbook, filter: Filter) -> List[Datapoint]:
     datapoints: List[Datapoint] = []
     
     for row in ws.iter_rows(min_row=2):
+        # check if unit_name matches (e.g. WEZ)
         unit_name=row[1].value
         if not unit_name:
             continue
 
-        i = row[1].row
+        register_address=row[0].value
+        row_i = row[1].row
         unit_id=row[2].value
 
-        if not filter.accepts(unit_name, unit_id, i):
+        if not filter.accepts(unit_name, unit_id, row_i, register_address):
             continue
 
         
         datapoint = Datapoint(
-            row=i,
+            row=row_i,
+            register_address=register_address,
             name=row[6].value,
             unit_name=unit_name,
             unit_id=unit_id,

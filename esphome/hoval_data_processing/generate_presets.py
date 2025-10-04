@@ -134,6 +134,7 @@ if __name__ == "__main__":
         Preset('BM', [
             Datapoint(
                 row=0,
+                register_address=0,
                 name='Room actual',
                 unit_name='BM',
                 unit_id=1,
