@@ -7,7 +7,7 @@ import yaml
 
 class Datapoint:
     def __init__(self, row: int, register_address: int, name: str, unit_name: str, unit_id: int, function_group: int, 
-                function_number: int, datapoint: int, type_name: str, decimal: int, 
+                function_number: int, datapoint: int, type_name: str, decimal: int, function_name: str,
                 steps: int, min: int, max: int, writable: bool, unit: str, text: dict[int, str], preset_id: str, prefix: str = ""):
         self.row = row
         self.register_address = register_address
@@ -18,6 +18,7 @@ class Datapoint:
         self.datapoint = datapoint
         self.type_name = type_name
         self.decimal = decimal
+        self.function_name = function_name
         self.steps = steps
         self.min = min
         self.max = max
@@ -196,6 +197,7 @@ def parse_datapoints(wb: Workbook, filter: Filter, preset_id: str, prefix: str =
             datapoint=row[5].value,
             type_name=row[8].value,
             decimal=row[9].value,
+            function_name=row[11].value,
             steps=row[12].value,
             min=row[13].value,
             max=row[14].value,
