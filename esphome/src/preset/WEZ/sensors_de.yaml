@@ -6,7 +6,7 @@ sensor:
   function_group: 0
   function_number: 0
   datapoint: 0
-  id: WEZ_0_0_0
+  id: WEZ_0_0_0_1477
   type: S16
   accuracy_decimals: 1
   filters:
@@ -22,7 +22,7 @@ sensor:
   function_group: 1
   function_number: 0
   datapoint: 3051
-  id: WEZ_1_0_3051
+  id: WEZ_1_0_3051_1481
   type: S16
   accuracy_decimals: 1
   filters:
@@ -39,7 +39,7 @@ sensor:
   function_group: 1
   function_number: 0
   datapoint: 3053
-  id: WEZ_1_0_3053
+  id: WEZ_1_0_3053_1482
   type: S16
   accuracy_decimals: 1
   filters:
@@ -56,7 +56,7 @@ sensor:
   function_group: 1
   function_number: 1
   datapoint: 3051
-  id: WEZ_1_1_3051
+  id: WEZ_1_1_3051_1483
   type: S16
   accuracy_decimals: 1
   filters:
@@ -73,7 +73,7 @@ sensor:
   function_group: 1
   function_number: 1
   datapoint: 3053
-  id: WEZ_1_1_3053
+  id: WEZ_1_1_3053_1484
   type: S16
   accuracy_decimals: 1
   filters:
@@ -90,7 +90,7 @@ sensor:
   function_group: 1
   function_number: 2
   datapoint: 3051
-  id: WEZ_1_2_3051
+  id: WEZ_1_2_3051_1485
   type: S16
   accuracy_decimals: 1
   filters:
@@ -107,7 +107,7 @@ sensor:
   function_group: 1
   function_number: 2
   datapoint: 3053
-  id: WEZ_1_2_3053
+  id: WEZ_1_2_3053_1486
   type: S16
   accuracy_decimals: 1
   filters:
@@ -124,7 +124,7 @@ sensor:
   function_group: 2
   function_number: 0
   datapoint: 5051
-  id: WEZ_2_0_5051
+  id: WEZ_2_0_5051_1497
   type: S16
   accuracy_decimals: 1
   filters:
@@ -141,7 +141,7 @@ sensor:
   function_group: 2
   function_number: 0
   datapoint: 5086
-  id: WEZ_2_0_5086
+  id: WEZ_2_0_5086_1498
   type: U8
   unit_of_measurement: "\xB0C"
   icon: mdi:temperature-celsius
@@ -155,7 +155,7 @@ sensor:
   function_group: 2
   function_number: 0
   datapoint: 1004
-  id: WEZ_2_0_1004
+  id: WEZ_2_0_1004_1499
   type: S16
   accuracy_decimals: 1
   filters:
@@ -171,7 +171,7 @@ sensor:
   function_group: 2
   function_number: 0
   datapoint: 4
-  id: WEZ_2_0_4
+  id: WEZ_2_0_4_1500
   type: S16
   accuracy_decimals: 1
   filters:
@@ -187,7 +187,7 @@ sensor:
   function_group: 1
   function_number: 0
   datapoint: 2
-  id: WEZ_1_0_2
+  id: WEZ_1_0_2_1513
   type: S16
   accuracy_decimals: 1
   filters:
@@ -203,7 +203,7 @@ sensor:
   function_group: 1
   function_number: 1
   datapoint: 2
-  id: WEZ_1_1_2
+  id: WEZ_1_1_2_1514
   type: S16
   accuracy_decimals: 1
   filters:
@@ -219,7 +219,7 @@ sensor:
   function_group: 1
   function_number: 2
   datapoint: 2
-  id: WEZ_1_2_2
+  id: WEZ_1_2_2_1515
   type: S16
   accuracy_decimals: 1
   filters:
@@ -235,7 +235,7 @@ sensor:
   function_group: 60
   function_number: 254
   datapoint: 30
-  id: WEZ_60_254_30
+  id: WEZ_60_254_30_1536
   type: U8
   unit_of_measurement: '%'
   icon: mdi:percent
@@ -248,7 +248,7 @@ sensor:
   function_group: 10
   function_number: 1
   datapoint: 23009
-  id: WEZ_10_1_23009
+  id: WEZ_10_1_23009_25614
   type: U32
   accuracy_decimals: 3
   filters:
@@ -264,7 +264,7 @@ sensor:
   function_group: 60
   function_number: 254
   datapoint: 47
-  id: WEZ_60_254_47
+  id: WEZ_60_254_47_27485
   type: U32
   accuracy_decimals: 3
   filters:
@@ -280,7 +280,7 @@ sensor:
   function_group: 60
   function_number: 254
   datapoint: 55
-  id: WEZ_60_254_55
+  id: WEZ_60_254_55_27489
   type: U32
   accuracy_decimals: 3
   filters:
@@ -297,7 +297,7 @@ text_sensor:
   function_group: 1
   function_number: 0
   datapoint: 3050
-  id: WEZ_1_0_3050
+  id: WEZ_1_0_3050_1478
   options:
   - Standby
   - Woche 1
@@ -321,7 +321,7 @@ text_sensor:
   function_group: 1
   function_number: 1
   datapoint: 3050
-  id: WEZ_1_1_3050
+  id: WEZ_1_1_3050_1479
   options:
   - Standby
   - Woche 1
@@ -345,7 +345,7 @@ text_sensor:
   function_group: 1
   function_number: 2
   datapoint: 3050
-  id: WEZ_1_2_3050
+  id: WEZ_1_2_3050_1480
   options:
   - Standby
   - Woche 1
@@ -369,7 +369,7 @@ text_sensor:
   function_group: 2
   function_number: 0
   datapoint: 5050
-  id: WEZ_2_0_5050
+  id: WEZ_2_0_5050_1496
   options:
   - Standby
   - Woche 1

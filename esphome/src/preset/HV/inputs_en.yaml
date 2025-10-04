@@ -6,7 +6,7 @@ number:
   function_group: 50
   function_number: 0
   datapoint: 40651
-  id: HV_50_0_40651_set
+  id: HV_50_0_40651_23623_set
   type: U8
   min_value: 15
   max_value: 100
@@ -22,7 +22,7 @@ number:
   function_group: 50
   function_number: 0
   datapoint: 40686
-  id: HV_50_0_40686_set
+  id: HV_50_0_40686_23624_set
   type: U8
   min_value: 15
   max_value: 100
@@ -38,7 +38,7 @@ number:
   function_group: 50
   function_number: 0
   datapoint: 40687
-  id: HV_50_0_40687_set
+  id: HV_50_0_40687_23626_set
   type: U8
   min_value: 30
   max_value: 65
@@ -55,7 +55,7 @@ select:
   function_group: 50
   function_number: 0
   datapoint: 40650
-  id: HV_50_0_40650_set
+  id: HV_50_0_40650_23622_set
   options:
   - Standby
   - Week 1

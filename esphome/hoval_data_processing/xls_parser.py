@@ -8,7 +8,7 @@ import yaml
 class Datapoint:
     def __init__(self, row: int, register_address: int, name: str, unit_name: str, unit_id: int, function_group: int, 
                 function_number: int, datapoint: int, type_name: str, decimal: int, 
-                steps: int, min: int, max: int, writable: bool, unit: str, text: dict[int, str]):
+                steps: int, min: int, max: int, writable: bool, unit: str, text: dict[int, str], preset_id: str, prefix: str = ""):
         self.row = row
         self.register_address = register_address
         self.unit_name = unit_name # is compared against UnitName column in xls
@@ -24,17 +24,19 @@ class Datapoint:
         self.writable = writable
         self.unit = unit
         self.text = text
+        self.preset_id = preset_id
+        self.prefix = prefix
         self.name = name
 
     def get_id(self) -> str:
-        return f'{self.unit_name}_{self.function_group}_{self.function_number}_{self.datapoint}'
-    
+        return f'{self.preset_id}_{self.function_group}_{self.function_number}_{self.datapoint}_{self.register_address}'
+
     def __toptronic_base(self) -> dict:
         return {
             'platform': 'toptronic',
-            'name': self.name,
+            'name': f"{self.prefix} {self.name}" if len(self.prefix) > 0 else self.name,
             'device_type': self.unit_name,
-            'device_addr': '${TT_' + self.unit_name + '_addr}',
+            'device_addr': f'${{TT_{self.preset_id}_addr}}',
             'function_group': self.function_group,
             'function_number': self.function_number,
             'datapoint': self.datapoint,
@@ -165,7 +167,7 @@ def translate(wb: Workbook, datapoints: List[Datapoint], locale: str = 'en') -> 
         if dp.type_name == 'LIST':
             dp.text = parse_text(row)
 
-def parse_datapoints(wb: Workbook, filter: Filter) -> List[Datapoint]:
+def parse_datapoints(wb: Workbook, filter: Filter, preset_id: str, prefix: str = "") -> List[Datapoint]:
     ws = wb.worksheets[1]
     datapoints: List[Datapoint] = []
     
@@ -200,6 +202,8 @@ def parse_datapoints(wb: Workbook, filter: Filter) -> List[Datapoint]:
             writable=row[15].value == 'Yes',
             unit=row[16].value,
             text={},
+            preset_id=preset_id,
+            prefix=prefix,
         )
         datapoints.append(datapoint)
 
@@ -324,4 +328,3 @@ if __name__ == "__main__":
 
     # dump_sensors(datapoints, 'sensors.yaml')
     # dump_inputs(datapoints, 'inputs.yaml')
-    

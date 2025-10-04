@@ -11,11 +11,15 @@ PatchFunc = Callable[[list[Datapoint], str], None]
 
 class Preset():
 
-    def __init__(self, id: str, filter: Filter | list[Datapoint], before_translate: Optional[PatchFunc] = None, before_dump: Optional[PatchFunc] = None):
+    def __init__(self, id: str, filter: Filter | list[Datapoint],
+                 before_translate: Optional[PatchFunc] = None,
+                 before_dump: Optional[PatchFunc] = None,
+                 prefix: str = ""):
         self.id = id
         self.filter = filter
         self.before_translate = before_translate
         self.before_dump = before_dump
+        self.prefix = prefix
 
     def generate(self, wb: Workbook, out_dir: pathlib.Path):
         locales = ['de', 'en', 'fr', 'it']
@@ -39,7 +43,7 @@ class Preset():
             dump_inputs(datapoints, out_dir.joinpath(self.id, f'inputs_{locale}.yaml'))
 
     def _get_datapoints(self, wb: Workbook, locale: str = 'en'):
-        datapoints = parse_datapoints(wb, self.filter)
+        datapoints = parse_datapoints(wb, self.filter, self.id, self.prefix)
 
         if self.before_translate:
             self.before_translate(datapoints, locale)
@@ -55,7 +59,7 @@ def _translate(datapoints: list[Datapoint], locale: str, translations: dict[str,
 
 def hv_before_translate(datapoints: list[Datapoint], _: str):
     # Patch type of "Status vent. regulation" from U8 to LIST
-    for dp in  datapoints:
+    for dp in datapoints:
         if dp.datapoint == 39652:
             dp.type_name = 'LIST'
 
@@ -75,16 +79,16 @@ def wez_before_dump(datapoints: list[Datapoint], locale: str):
 def bd_before_dump(datapoints: list[Datapoint], locale: str):
     translations = {
         'en': {
-            'BM_83_0_0': 'Room actual'
+            'BM_83_0_0_0': 'Room actual'
         },
         'de': {
-            'BM_83_0_0': 'Raum-Ist'
+            'BM_83_0_0_0': 'Raum-Ist'
         },
         'fr': {
-            'BM_83_0_0': 'Valeur réelle pièce'
+            'BM_83_0_0_0': 'Valeur réelle pièce'
         },
         'it': {
-            'BM_83_0_0': 'Ambiente-effettivo'
+            'BM_83_0_0_0': 'Ambiente-effettivo'
         }
     }
     _translate(datapoints, locale, translations)
@@ -149,6 +153,7 @@ if __name__ == "__main__":
                 writable=False,
                 unit='°C',
                 text={},
+                preset_id="BM"
             ),
         ], before_dump=bd_before_dump),
     ]
