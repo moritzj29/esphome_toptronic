@@ -4,6 +4,7 @@ from openpyxl.cell import Cell
 from openpyxl.worksheet.worksheet import Worksheet
 from typing import List
 import yaml
+import re
 
 class Datapoint:
     def __init__(self, row: int, register_address: int, name: str, unit_name: str, unit_id: int, function_group: int, 
@@ -143,6 +144,16 @@ def parse_text(row: List[Cell]) -> dict[int, str]:
             res[i] = text.value
     return res
 
+def parse_comment(row: List[Cell]) -> dict[int, str]:
+    res = {}
+    if not row[17].value:
+        return res
+    m = re.findall(r"[#](\d)[:\s=\d]+([^#]*)", row[17].value)
+    # relies on # as indicator for each setting
+    for match in m:
+        res[int(match[0])] = match[1].strip()
+    return res
+
 def translate(wb: Workbook, datapoints: List[Datapoint], locale: str = 'en') -> None:
     worksheets = {
         'de': wb.worksheets[1],
@@ -166,7 +177,11 @@ def translate(wb: Workbook, datapoints: List[Datapoint], locale: str = 'en') -> 
         dp.name = row[6].value
 
         if dp.type_name == 'LIST':
+            # 1. try to extract values from text columns
             dp.text = parse_text(row)
+            # 2. if no text was found, try to extract from comments
+            if dp.text == {}:
+                dp.text = parse_comment(row)
 
 def parse_datapoints(wb: Workbook, filter: Filter, preset_id: str, prefix: str = "") -> List[Datapoint]:
     ws = wb.worksheets[1]
