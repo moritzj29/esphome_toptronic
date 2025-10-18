@@ -1032,6 +1032,7 @@ sensor:
   accuracy_decimals: 1
   filters:
   - multiply: 0.1
+  state_class: measurement
 - platform: toptronic
   name: Coefficient of Performance
   device_type: WEZ
@@ -1045,6 +1046,7 @@ sensor:
   accuracy_decimals: 1
   filters:
   - multiply: 0.1
+  state_class: measurement
 - platform: toptronic
   name: Probe flow/Intake temp.
   device_type: WEZ
