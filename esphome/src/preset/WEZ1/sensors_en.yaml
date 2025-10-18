@@ -107,7 +107,7 @@ sensor:
   state_class: measurement
   internal: true
 - platform: toptronic
-  name: Flow setpoint constant req. heating
+  name: Flow setpoint constant req. heating (1)
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
   device_id: ${TT_WEZ1_device_id}
@@ -115,6 +115,24 @@ sensor:
   function_number: 0
   datapoint: 7036
   id: WEZ1_1_0_7036_1490
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Flow setpoint constant req. heating (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 7036
+  id: WEZ1_1_1_7036_1491
   type: S16
   accuracy_decimals: 1
   filters:
@@ -357,6 +375,23 @@ sensor:
   device_class: temperature
   state_class: measurement
 - platform: toptronic
+  name: Output limitation
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 8
+  id: WEZ1_60_254_8_1522
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
   name: WEZ temperature
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
@@ -434,6 +469,23 @@ sensor:
   datapoint: 27
   id: WEZ1_60_254_27_1534
   type: U8
+- platform: toptronic
+  name: Return temperature
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 29
+  id: WEZ1_60_254_29_1535
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
 - platform: toptronic
   name: WEZ output
   device_type: WEZ
@@ -1082,7 +1134,7 @@ sensor:
   device_class: temperature
   state_class: measurement
 - platform: toptronic
-  name: Regelstrategie
+  name: Regelstrategie (1)
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
   device_id: ${TT_WEZ1_device_id}
@@ -1090,6 +1142,17 @@ sensor:
   function_number: 0
   datapoint: 3032
   id: WEZ1_1_0_3032_27510
+  type: U8
+  internal: true
+- platform: toptronic
+  name: Regelstrategie (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 3032
+  id: WEZ1_1_1_3032_27511
   type: U8
   internal: true
 - platform: toptronic
@@ -1190,6 +1253,36 @@ sensor:
   datapoint: 2119
   id: WEZ1_4_0_2119_27548
   type: U8
+- platform: toptronic
+  name: Max. output heating mode
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 10111
+  id: WEZ1_10_1_10111_27550
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Max. output DHW operation
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 10112
+  id: WEZ1_10_1_10112_27551
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+  internal: true
 text_sensor:
 - platform: toptronic
   name: Heating operation choice (1)

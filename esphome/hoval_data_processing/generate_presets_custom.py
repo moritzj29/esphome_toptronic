@@ -38,6 +38,8 @@ def wez_before_dump(datapoints: list[Datapoint], locale: str):
         3053,
         1022, # eher Name als Index
         #1009,
+        3032,
+        7036,
         ]
 
     # add heat circle number
@@ -110,12 +112,14 @@ if __name__ == "__main__":
             1500, # Warmwasser-Ist SF
             18725, # Wärmeerzeuger-Ist
             18742, # Rücklauftemperatur Wärmeerzeuger
+            1522, # Leistungsbegrenzung
             1525, # WEZ-Temperatur
             1529, # Heizung Sollwert
             18740, # Drehzahl Hauptpumpe
             1530, # Speicher Sollwert
             1531, # WEZ Sollwert
             1534, # Fehlercode vom Automaten
+            1535, # Rücklauftemperatur
             1536, # WEZ-Leistung
             1537, # Absolute Leistung
             1539, # WEZ-Status
@@ -153,6 +157,7 @@ if __name__ == "__main__":
             19872, # Führungs-WEZ
             27548, # Führungs-WEZ 
             27510, # Regelstrategie
+            27511, # Regelstrategie
             1479, # Betriebswahl Heizung
             1478, # Betriebswahl Heizung
             1483, # Normal-Raumtemperatur Heizbetrieb
@@ -163,9 +168,12 @@ if __name__ == "__main__":
             1496, # Betriebswahl Warmwasser
             1497, # Normal-Warmwassertemperatur
             1498, # Spar-Warmwassertemperatur
+            1491, # Vorlauf Soll Konstantanf. Heizen
             1490, # Vorlauf Soll Konstantanf. Heizen
             19482, # Vorlauf Soll Konstantanf. Kühlen
             1561, # Betriebswahl Wärmeerzeuger
+            27550, # Max. Leistung Heiz-Betrieb
+            27551, # Max. Leistung WW-Betrieb
             18738, # Wasserdruck
             18723, # FA-Status
             18726, # Modulation
@@ -216,6 +224,7 @@ if __name__ == "__main__":
             1633, # Warmwasser-Ist SF
             27553, # Warmwasser-Ist SF2
             18786, # Wärmeerzeuger-Ist
+            1655, # Leistungsbegrenzung
             18803, # Rücklauftemperatur Wärmeerzeuger
             1669, # WEZ-Leistung
             1670, # Absolute Leistung
@@ -223,8 +232,12 @@ if __name__ == "__main__":
             1632, # Warmwasser-Soll
             18785, # Wärmeerzeuger-Soll
             19757, # SLP Warmwasser-Ladepumpe
+            1637, # Status Warmwasserregelung
+            18783, # Status Wärmeerzeugerregelung
             1629, # Betriebswahl Warmwasser
             1694, # Betriebswahl Wärmeerzeuger
+            27620, # Max. Leistung Heiz-Betrieb
+            18784, # FA-Status
             18787, # Modulation
             18798, # Betriebsmeldung
             1679, # MK1 HW-Ausgang
@@ -232,6 +245,7 @@ if __name__ == "__main__":
             1681, # YK1- HW-Ausgang
             1683, # SLP HW-Ausgang
             1685, # VA2 HW-Ausgang
+            27607, # Status Smart Grid
             19054, # Info 1 - vermutlich DF1-1 (21-015)
             19055, # Info 2 - vermutlich DF1-2 (21-018)
             25615, # Aktuelle elektr. Leistungsaufnahme WEZ

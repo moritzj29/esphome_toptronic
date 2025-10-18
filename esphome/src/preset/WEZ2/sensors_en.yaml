@@ -51,6 +51,33 @@ sensor:
   device_class: temperature
   state_class: measurement
 - platform: toptronic
+  name: Status domestic hot water control
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 2052
+  id: WEZ2_2_0_2052_1637
+  type: U8
+- platform: toptronic
+  name: Output limitation
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 8
+  id: WEZ2_60_254_8_1655
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
   name: WEZ output
   device_type: WEZ
   device_addr: ${TT_WEZ2_addr}
@@ -143,6 +170,26 @@ sensor:
   id: WEZ2_10_1_23085_1697
   type: U8
   internal: true
+- platform: toptronic
+  name: Status heat generator control
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 2053
+  id: WEZ2_10_1_2053_18783
+  type: U8
+- platform: toptronic
+  name: FA status
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20051
+  id: WEZ2_10_1_20051_18784
+  type: U8
 - platform: toptronic
   name: Heat generator setpoint
   device_type: WEZ
@@ -335,6 +382,31 @@ sensor:
   filters:
   - multiply: 0.1
   state_class: measurement
+- platform: toptronic
+  name: Status Smart Grid
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21090
+  id: WEZ2_0_0_21090_27607
+  type: U8
+- platform: toptronic
+  name: Max. output heating mode
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 10111
+  id: WEZ2_10_1_10111_27620
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+  internal: true
 text_sensor:
 - platform: toptronic
   name: Hot water operation choice

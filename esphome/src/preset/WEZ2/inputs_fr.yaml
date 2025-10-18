@@ -69,6 +69,23 @@ number:
   max_value: 1
   step: 1
   decimal: 0
+- platform: toptronic
+  name: Puissance max. mode chauffage
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 10111
+  id: WEZ2_10_1_10111_27620_set
+  type: U8
+  min_value: 0
+  max_value: 100
+  step: 1
+  decimal: 0
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
 select:
 - platform: toptronic
   name: "S\xE9lection fonct. eau chaude"
