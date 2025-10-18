@@ -3,6 +3,7 @@ sensor:
   name: "Normal-L\xFCftungsmodulation "
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40651
@@ -17,6 +18,7 @@ sensor:
   name: "Spar-L\xFCftungsmodulation "
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40686
@@ -31,6 +33,7 @@ sensor:
   name: "L\xFCftungsmodulation"
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 38606
@@ -44,6 +47,7 @@ sensor:
   name: Feuchte Sollwert
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40687
@@ -58,6 +62,7 @@ sensor:
   name: Feuchtigkeit Abluft
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 37600
@@ -71,6 +76,7 @@ sensor:
   name: Temperatur Aussenluft
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 0
@@ -87,6 +93,7 @@ sensor:
   name: Temperatur Abluft
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 37602
@@ -103,6 +110,7 @@ sensor:
   name: Ventilator Fortluft soll
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 38600
@@ -116,6 +124,7 @@ sensor:
   name: "Wartungssz\xE4hlwert Meldung Wartung (Betriebswochen)"
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 0
   function_number: 0
   datapoint: 20037
@@ -125,6 +134,7 @@ sensor:
   name: "Reinigungsz\xE4hlwert Meldung Reinigung (Betriebswochen)"
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 0
   function_number: 0
   datapoint: 41613
@@ -135,6 +145,7 @@ text_sensor:
   name: "Betriebswahl L\xFCftung"
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40650
@@ -155,6 +166,7 @@ text_sensor:
   name: "Status L\xFCftungsregelung"
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 39652

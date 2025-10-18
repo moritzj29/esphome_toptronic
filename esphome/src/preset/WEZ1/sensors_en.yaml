@@ -1,0 +1,1303 @@
+sensor:
+- platform: toptronic
+  name: AF1 - outdoor sensor 1
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 0
+  id: WEZ1_0_0_0_1477
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Normal room temp. heating oper. (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 3051
+  id: WEZ1_1_0_3051_1481
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Conservation room temp. heating oper. (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 3053
+  id: WEZ1_1_0_3053_1482
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Normal room temp. heating oper. (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 3051
+  id: WEZ1_1_1_3051_1483
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Conservation room temp. heating oper. (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 3053
+  id: WEZ1_1_1_3053_1484
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Conservation room temp. heating oper. (3)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 2
+  datapoint: 3053
+  id: WEZ1_1_2_3053_1486
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Flow setpoint constant req. heating
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 7036
+  id: WEZ1_1_0_7036_1490
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Room setpoint (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 1001
+  id: WEZ1_1_0_1001_1493
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Room setpoint (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 1001
+  id: WEZ1_1_1_1001_1494
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Normal hot water temp.
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 5051
+  id: WEZ1_2_0_5051_1497
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Conservation hot water temp.
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 5086
+  id: WEZ1_2_0_5086_1498
+  type: U8
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Hot water setpoint
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1004
+  id: WEZ1_2_0_1004_1499
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Hot water actual SF
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 4
+  id: WEZ1_2_0_4_1500
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Status domestic hot water control
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 2052
+  id: WEZ1_2_0_2052_1504
+  type: U8
+- platform: toptronic
+  name: Room actual (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 1
+  id: WEZ1_1_0_1_1510
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Room actual (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 1
+  id: WEZ1_1_1_1_1511
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Supply actual (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 2
+  id: WEZ1_1_0_2_1513
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Supply actual (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 2
+  id: WEZ1_1_1_2_1514
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Supply actual (3)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 2
+  datapoint: 2
+  id: WEZ1_1_2_2_1515
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Setpoint for heating circuit operation
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 0
+  id: WEZ1_60_254_0_1520
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Setpoint for tank operation (255)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 1
+  id: WEZ1_60_254_1_1521
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: WEZ temperature
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 17
+  id: WEZ1_60_254_17_1525
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Heating setpoint
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 22
+  id: WEZ1_60_254_22_1529
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Storage tank setpoint
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 23
+  id: WEZ1_60_254_23_1530
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: WEZ set value
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 24
+  id: WEZ1_60_254_24_1531
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Error code from controller
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 27
+  id: WEZ1_60_254_27_1534
+  type: U8
+- platform: toptronic
+  name: WEZ output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 30
+  id: WEZ1_60_254_30_1536
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Absolute output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 31
+  id: WEZ1_60_254_31_1537
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: WEZ status
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 33
+  id: WEZ1_60_254_33_1539
+  type: U8
+- platform: toptronic
+  name: Operating status
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 34
+  id: WEZ1_60_254_34_1540
+  type: U8
+- platform: toptronic
+  name: MK1 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ1_0_0_21031_1546
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1+ HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ1_0_0_21032_1547
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1- HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ1_0_0_21033_1548
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA1 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21036
+  id: WEZ1_0_0_21036_1551
+  type: U8
+- platform: toptronic
+  name: VA2 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: WEZ1_0_0_21037_1552
+  type: U8
+- platform: toptronic
+  name: Activate emissions test
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ1_10_1_23085_1564
+  type: U8
+  internal: true
+- platform: toptronic
+  name: Status heat generator control
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 2053
+  id: WEZ1_10_1_2053_18722
+  type: U8
+- platform: toptronic
+  name: FA status
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20051
+  id: WEZ1_10_1_20051_18723
+  type: U8
+- platform: toptronic
+  name: Heat generator setpoint
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 1007
+  id: WEZ1_10_1_1007_18724
+  type: S16
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Heat generator actual
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 7
+  id: WEZ1_10_1_7_18725
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Modulation
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20052
+  id: WEZ1_10_1_20052_18726
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Operating message
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20053
+  id: WEZ1_10_1_20053_18737
+  type: U8
+- platform: toptronic
+  name: Water pressure
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20050
+  id: WEZ1_10_1_20050_18738
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+- platform: toptronic
+  name: Pump heat generator (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 1022
+  id: WEZ1_10_1_1022_18739
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Main pump rotation speed
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 22
+  id: WEZ1_10_1_22_18740
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Return temperature heat generator
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 8
+  id: WEZ1_10_1_8_18742
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: "Set value output heat generator Zusatzw\xE4rme."
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 0
+  datapoint: 1009
+  id: WEZ1_10_0_1009_18745
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Pump heat generator (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 0
+  datapoint: 1022
+  id: WEZ1_10_0_1022_18757
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: System flow temperature
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 3
+  function_number: 0
+  datapoint: 96
+  id: WEZ1_3_0_96_18760
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: System temp. setpoint heating current
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 3
+  function_number: 0
+  datapoint: 1096
+  id: WEZ1_3_0_1096_18761
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: System temp. setpoint DHW current
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 3
+  function_number: 0
+  datapoint: 1097
+  id: WEZ1_3_0_1097_18762
+  type: S8
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Set value output heat generator Kaskadenm. 1
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 4
+  function_number: 0
+  datapoint: 1009
+  id: WEZ1_4_0_1009_18767
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: 0 - 100% current req. on heat generator Kaskadenm. 1
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 4
+  function_number: 0
+  datapoint: 2043
+  id: WEZ1_4_0_2043_18768
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Set value output heat generator Kaskadenm. 2
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 4
+  function_number: 1
+  datapoint: 1009
+  id: WEZ1_4_1_1009_18769
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: 0 - 100% current req. on heat generator Kaskadenm. 2
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 4
+  function_number: 1
+  datapoint: 2043
+  id: WEZ1_4_1_2043_18770
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Info sensor 1
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21120
+  id: WEZ1_0_0_21120_19049
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info sensor 2
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21121
+  id: WEZ1_0_0_21121_19050
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Flow setpoint constant req. cooling
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 7047
+  id: WEZ1_1_0_7047_19482
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Supply setpoint (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 1002
+  id: WEZ1_1_0_1002_19562
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Supply setpoint (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 1002
+  id: WEZ1_1_1_1002_19563
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: mixer (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 1021
+  id: WEZ1_1_0_1021_19658
+  type: S8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: mixer (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 1021
+  id: WEZ1_1_1_1021_19659
+  type: S8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Pump (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 1020
+  id: WEZ1_1_0_1020_19706
+  type: U8
+- platform: toptronic
+  name: Pump (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 1020
+  id: WEZ1_1_1_1020_19707
+  type: U8
+- platform: toptronic
+  name: SLP hot water charging pump
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1066
+  id: WEZ1_2_0_1066_19754
+  type: U8
+- platform: toptronic
+  name: System flow temperature hot water
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 3
+  function_number: 0
+  datapoint: 97
+  id: WEZ1_3_0_97_19868
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Guide H-Gen
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 4
+  function_number: 0
+  datapoint: 2119
+  id: WEZ1_4_0_2119_19872
+  type: U8
+- platform: toptronic
+  name: Eletrical power WEZ
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23002
+  id: WEZ1_10_1_23002_25611
+  type: S16
+  accuracy_decimals: 2
+  filters:
+  - multiply: 0.01
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+- platform: toptronic
+  name: Heating power WEZ
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23003
+  id: WEZ1_10_1_23003_25612
+  type: S16
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+- platform: toptronic
+  name: Total energy efficiency H-Gen
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23008
+  id: WEZ1_10_1_23008_27467
+  type: U8
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+- platform: toptronic
+  name: Coefficient of Performance
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 45
+  id: WEZ1_60_254_45_27490
+  type: U8
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+- platform: toptronic
+  name: Probe flow/Intake temp.
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 84
+  id: WEZ1_60_254_84_27491
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Probe return/Evaporator surface temp.
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 85
+  id: WEZ1_60_254_85_27492
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Regelstrategie
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 3032
+  id: WEZ1_1_0_3032_27510
+  type: U8
+  internal: true
+- platform: toptronic
+  name: Collective fault output fault reporting output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 1099
+  id: WEZ1_0_0_1099_27534
+  type: U8
+- platform: toptronic
+  name: Available electrical power, dampened
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 20069
+  id: WEZ1_0_0_20069_27536
+  type: S16
+  accuracy_decimals: 2
+  filters:
+  - multiply: 0.01
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Status Smart Grid
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21090
+  id: WEZ1_0_0_21090_27537
+  type: U8
+- platform: toptronic
+  name: Setpoint incr./decr. status
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21091
+  id: WEZ1_0_0_21091_27538
+  type: U8
+- platform: toptronic
+  name: SG minimum power
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 38003
+  id: WEZ1_0_0_38003_27542
+  type: U16
+  accuracy_decimals: 2
+  filters:
+  - multiply: 0.01
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Smart Grid via system bus
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 38012
+  id: WEZ1_0_0_38012_27545
+  type: U8
+  internal: true
+- platform: toptronic
+  name: Smart Grid function trigger
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 38013
+  id: WEZ1_0_0_38013_27546
+  type: U8
+  internal: true
+- platform: toptronic
+  name: 'Leadership-WEZ '
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 4
+  function_number: 0
+  datapoint: 2119
+  id: WEZ1_4_0_2119_27548
+  type: U8
+text_sensor:
+- platform: toptronic
+  name: Heating operation choice (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 3050
+  id: WEZ1_1_0_3050_1478
+  options:
+  - Standby
+  - week 1
+  - week 2
+  - constant
+  - Eco mode
+  - Manual operating mode heating
+  - Manual operating mode cooling
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 5
+  - 7
+  - 8
+- platform: toptronic
+  name: Heating operation choice (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 3050
+  id: WEZ1_1_1_3050_1479
+  options:
+  - Standby
+  - week 1
+  - week 2
+  - constant
+  - Eco mode
+  - Manual operating mode heating
+  - Manual operating mode cooling
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 5
+  - 7
+  - 8
+- platform: toptronic
+  name: Hot water operation choice
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 5050
+  id: WEZ1_2_0_5050_1496
+  options:
+  - Standby
+  - 'week 1 '
+  - week 2
+  - Constant
+  - Eco mode
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 6
+- platform: toptronic
+  name: Status heating circuit control (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 2051
+  id: WEZ1_1_0_2051_1501
+  options: []
+  values: []
+- platform: toptronic
+  name: Status heating circuit control (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 2051
+  id: WEZ1_1_1_2051_1502
+  options: []
+  values: []
+- platform: toptronic
+  name: Heat generator operation choice
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 9075
+  id: WEZ1_10_1_9075_1561
+  options:
+  - Deakt.
+  - Automatik
+  - Heizen
+  - K?hlen
+  values:
+  - 0
+  - 1
+  - 4
+  - 5

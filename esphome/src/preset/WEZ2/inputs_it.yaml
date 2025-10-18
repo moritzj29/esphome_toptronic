@@ -1,0 +1,112 @@
+number:
+- platform: toptronic
+  name: MK1 hardware-uscita
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ2_0_0_21031_1679_set
+  type: U8
+  min_value: 0
+  max_value: 1
+  step: 1
+  decimal: 0
+- platform: toptronic
+  name: YK1+ hardware-uscita
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ2_0_0_21032_1680_set
+  type: U8
+  min_value: 0
+  max_value: 1
+  step: 1
+  decimal: 0
+- platform: toptronic
+  name: YK1- hardware-uscita
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ2_0_0_21033_1681_set
+  type: U8
+  min_value: 0
+  max_value: 1
+  step: 1
+  decimal: 0
+- platform: toptronic
+  name: SLP hardware-uscita
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21035
+  id: WEZ2_0_0_21035_1683_set
+  type: U8
+  min_value: 0
+  max_value: 1
+  step: 1
+  decimal: 0
+- platform: toptronic
+  name: Attivare test emissioni
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ2_10_1_23085_1697_set
+  type: U8
+  min_value: 0
+  max_value: 1
+  step: 1
+  decimal: 0
+select:
+- platform: toptronic
+  name: Selezione modo funzionamento acqua calda
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 5050
+  id: WEZ2_2_0_5050_1629_set
+  options:
+  - Stand-by
+  - Settimana 1
+  - Settimana 2
+  - Costante
+  - "Modalit\xE0 risparmio"
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 6
+- platform: toptronic
+  name: Selezione modo funz.to generatore calore
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 9075
+  id: WEZ2_10_1_9075_1694_set
+  options:
+  - Deakt.
+  - Automatik
+  - Heizen
+  - K?hlen
+  values:
+  - 0
+  - 1
+  - 4
+  - 5

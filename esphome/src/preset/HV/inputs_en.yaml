@@ -3,6 +3,7 @@ number:
   name: Normal ventilation modulation
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40651
@@ -19,6 +20,7 @@ number:
   name: Eco ventilation modulation
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40686
@@ -35,6 +37,7 @@ number:
   name: Humidity set value
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40687
@@ -52,6 +55,7 @@ select:
   name: Op. choice ventilation
   device_type: HV
   device_addr: ${TT_HV_addr}
+  device_id: ${TT_HV_device_id}
   function_group: 50
   function_number: 0
   datapoint: 40650

@@ -1,0 +1,376 @@
+sensor:
+- platform: toptronic
+  name: "AF 1 - sonde ext\xE9rieure 1"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 0
+  id: WEZ2_0_0_0_1610
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Eau chaude consigne
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1004
+  id: WEZ2_2_0_1004_1632
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: "Eau chaude r\xE9elle SF"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 4
+  id: WEZ2_2_0_4_1633
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Puissance GDC
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 30
+  id: WEZ2_60_254_30_1669
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Puissance absolue
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 31
+  id: WEZ2_60_254_31_1670
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: CM1 sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ2_0_0_21031_1679
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1+ sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ2_0_0_21032_1680
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1- sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ2_0_0_21033_1681
+  type: U8
+  internal: true
+- platform: toptronic
+  name: SLP sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21035
+  id: WEZ2_0_0_21035_1683
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA2 sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: WEZ2_0_0_21037_1685
+  type: U8
+- platform: toptronic
+  name: "Activer test d'\xE9mission"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ2_10_1_23085_1697
+  type: U8
+  internal: true
+- platform: toptronic
+  name: "G\xE9n\xE9rateur de chaleur consigne"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 1007
+  id: WEZ2_10_1_1007_18785
+  type: S16
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: "G\xE9n\xE9rateur de chaleur r\xE9el"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 7
+  id: WEZ2_10_1_7_18786
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Modulation
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20052
+  id: WEZ2_10_1_20052_18787
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Signalisation de marche
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20053
+  id: WEZ2_10_1_20053_18798
+  type: U8
+- platform: toptronic
+  name: "Temp\xE9rature retour g\xE9n\xE9rateur de chaleur"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 8
+  id: WEZ2_10_1_8_18803
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Sonde info 1
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21120
+  id: WEZ2_0_0_21120_19054
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Sonde info 2
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21121
+  id: WEZ2_0_0_21121_19055
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: SLP pompe de charge eau chaude
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1066
+  id: WEZ2_2_0_1066_19757
+  type: U8
+- platform: toptronic
+  name: "Puissance \xE9lectrique"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23002
+  id: WEZ2_10_1_23002_25615
+  type: S16
+  accuracy_decimals: 2
+  filters:
+  - multiply: 0.01
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+- platform: toptronic
+  name: Puissance thermique
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23003
+  id: WEZ2_10_1_23003_25616
+  type: S16
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+- platform: toptronic
+  name: "Efficacit\xE9 \xE9nerg\xE9tique totale GdC"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23008
+  id: WEZ2_10_1_23008_27468
+  type: U8
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+- platform: toptronic
+  name: "Eau chaude r\xE9elle SF2"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 6
+  id: WEZ2_2_0_6_27553
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Coefficient of Performance
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 45
+  id: WEZ2_60_254_45_27560
+  type: U8
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+text_sensor:
+- platform: toptronic
+  name: "S\xE9lection fonct. eau chaude"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 5050
+  id: WEZ2_2_0_5050_1629
+  options:
+  - Stand-by
+  - Semaine 1
+  - Semaine 2
+  - Constant
+  - "Mode \xE9co"
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 6
+- platform: toptronic
+  name: "S\xE9lection fonct. g\xE9n\xE9rateur de chaleur"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 9075
+  id: WEZ2_10_1_9075_1694
+  options:
+  - Deakt.
+  - Automatik
+  - Heizen
+  - K?hlen
+  values:
+  - 0
+  - 1
+  - 4
+  - 5

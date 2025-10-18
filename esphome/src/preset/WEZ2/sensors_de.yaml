@@ -1,0 +1,376 @@
+sensor:
+- platform: toptronic
+  name: "AF1 - Aussenf\xFChler 1"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 0
+  id: WEZ2_0_0_0_1610
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Warmwasser-Soll
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1004
+  id: WEZ2_2_0_1004_1632
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Warmwasser-Ist SF
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 4
+  id: WEZ2_2_0_4_1633
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: WEZ-Leistung
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 30
+  id: WEZ2_60_254_30_1669
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Absolute Leistung
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 31
+  id: WEZ2_60_254_31_1670
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: MK1 HW-Ausgang
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ2_0_0_21031_1679
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1+ HW-Ausgang
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ2_0_0_21032_1680
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1- HW-Ausgang
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ2_0_0_21033_1681
+  type: U8
+  internal: true
+- platform: toptronic
+  name: SLP HW-Ausgang
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21035
+  id: WEZ2_0_0_21035_1683
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA2 HW-Ausgang
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: WEZ2_0_0_21037_1685
+  type: U8
+- platform: toptronic
+  name: Emissionstest aktivieren
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ2_10_1_23085_1697
+  type: U8
+  internal: true
+- platform: toptronic
+  name: "W\xE4rmeerzeuger-Soll"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 1007
+  id: WEZ2_10_1_1007_18785
+  type: S16
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: "W\xE4rmeerzeuger-Ist"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 7
+  id: WEZ2_10_1_7_18786
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Modulation
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20052
+  id: WEZ2_10_1_20052_18787
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+- platform: toptronic
+  name: Betriebsmeldung
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 20053
+  id: WEZ2_10_1_20053_18798
+  type: U8
+- platform: toptronic
+  name: "R\xFCcklauftemperatur W\xE4rmeerzeuger"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 8
+  id: WEZ2_10_1_8_18803
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 1 - vermutlich DF1-1 (21-015)
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21120
+  id: WEZ2_0_0_21120_19054
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 2 - vermutlich DF1-2 (21-018)
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21121
+  id: WEZ2_0_0_21121_19055
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: SLP Warmwasser-Ladepumpe
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1066
+  id: WEZ2_2_0_1066_19757
+  type: U8
+- platform: toptronic
+  name: Aktuelle elektr. Leistungsaufnahme WEZ
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23002
+  id: WEZ2_10_1_23002_25615
+  type: S16
+  accuracy_decimals: 2
+  filters:
+  - multiply: 0.01
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+- platform: toptronic
+  name: Aktuelle therm. Leistungsaufnahme WEZ
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23003
+  id: WEZ2_10_1_23003_25616
+  type: S16
+  unit_of_measurement: kW
+  icon: mdi:lightning-bolt
+  device_class: power
+  state_class: measurement
+- platform: toptronic
+  name: JAZ Jahresarbeitszahl WEZ
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23008
+  id: WEZ2_10_1_23008_27468
+  type: U8
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+- platform: toptronic
+  name: Warmwasser-Ist SF2
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 6
+  id: WEZ2_2_0_6_27553
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Coefficient of Performance
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 60
+  function_number: 254
+  datapoint: 45
+  id: WEZ2_60_254_45_27560
+  type: U8
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+text_sensor:
+- platform: toptronic
+  name: Betriebswahl Warmwasser
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 5050
+  id: WEZ2_2_0_5050_1629
+  options:
+  - Standby
+  - Woche 1
+  - Woche 2
+  - Konstant
+  - Sparbetrieb
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 6
+- platform: toptronic
+  name: "Betriebswahl W\xE4rmeerzeuger"
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 9075
+  id: WEZ2_10_1_9075_1694
+  options:
+  - Deakt.
+  - Automatik
+  - Heizen
+  - "K\xFChlen"
+  values:
+  - 0
+  - 1
+  - 4
+  - 5
