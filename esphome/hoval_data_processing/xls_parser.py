@@ -39,6 +39,7 @@ class Datapoint:
             'name': f"{self.prefix} {self.name}" if len(self.prefix) > 0 else self.name,
             'device_type': self.unit_name,
             'device_addr': f'${{TT_{self.preset_id}_addr}}',
+            'device_id': f'${{TT_{self.preset_id}_device_id}}',
             'function_group': self.function_group,
             'function_number': self.function_number,
             'datapoint': self.datapoint,
