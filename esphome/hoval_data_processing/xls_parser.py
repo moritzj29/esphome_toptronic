@@ -64,6 +64,12 @@ class Datapoint:
         # convert unit to full device class
         if self.unit is not None and self.unit != '0':
             device_units = unit_to_device_class(self.unit, self.name, class_measurement=True)
+        elif decimal_value > 0:
+            # if no unit is given, but decimal is set, assume measurement to enable statistics etc.
+            # e.g. for COP ratio without unit
+            device_units = {
+                'state_class': 'measurement',
+            }
         else:
             device_units = {}
                 
