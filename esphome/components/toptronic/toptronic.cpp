@@ -344,7 +344,8 @@ void TopTronic::parse_frame(std::vector<uint8_t> data, uint32_t can_id, bool rem
 
 void TopTronic::interpret_message(std::vector<uint8_t> data, uint32_t can_id, bool remote_transmission_request) {
     // check if operation is of type RESPONSE
-    
+    // GET and SET messages do not contain any information -> log only
+
     if (data[0] == GET_REQ) {
         ESP_LOGD(TAG, "[GET] Can-ID: 0x%08X, Data: 0x%s", can_id, hex_str(&data[0], data.size()).c_str());
         return;
@@ -360,6 +361,7 @@ void TopTronic::interpret_message(std::vector<uint8_t> data, uint32_t can_id, bo
         return;
     }
 
+    // extract device_id and check if device exists
     uint32_t device_id = (can_id >> 11) & 0x7FF;
 
     if (devices_.count(device_id) <= 0) {
@@ -374,10 +376,28 @@ void TopTronic::interpret_message(std::vector<uint8_t> data, uint32_t can_id, bo
         + (datapoint << 16);
 
     if (device->sensors.count(id) <= 0) {
+        // device known, but sensor not found -> possibly a new sensor
+        ESP_LOGD(TAG, "[NEW] Can-ID: 0x%08X (%u), Data: 0x%s, Datapoint: 0x%04X (%u), ID: 0x%06X (%u), function_group: 0x%02X (%u), function_number: 0x%02X (%u)", 
+            can_id, can_id, 
+            hex_str(&data[0], data.size()).c_str(), 
+            datapoint, datapoint, 
+            id, id, 
+            data[1], data[1], 
+            data[2], data[2]
+        );
         return;
     }
+    ESP_LOGD(TAG, "[EXS] Can-ID: 0x%08X (%u), Data: 0x%s, Datapoint: 0x%04X (%u), ID: 0x%06X (%u), function_group: 0x%02X (%u), function_number: 0x%02X (%u)", 
+            can_id, can_id, 
+            hex_str(&data[0], data.size()).c_str(), 
+            datapoint, datapoint, 
+            id, id, 
+            data[1], data[1], 
+            data[2], data[2]
+        );
     TopTronicBase *sensorBase = device->sensors[id];
 
+    // check sensor type -> float or string
     if (sensorBase->type() == SENSOR) {
         TopTronicSensor *sensor = (TopTronicSensor*)sensorBase;
         float value = sensor->parse_value(std::vector<uint8_t>(data.begin() + 5, data.end()));
