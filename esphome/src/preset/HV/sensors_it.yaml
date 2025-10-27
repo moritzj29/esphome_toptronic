@@ -140,6 +140,7 @@ sensor:
   datapoint: 41613
   id: HV_0_0_41613_28946
   type: U32
+binary_sensor: []
 text_sensor:
 - platform: toptronic
   name: Selezione modo funzion.to ventilazione

@@ -16,3 +16,5 @@ sensor:
   icon: mdi:temperature-celsius
   device_class: temperature
   state_class: measurement
+binary_sensor: []
+text_sensor: []

@@ -50,6 +50,7 @@ number:
   unit_of_measurement: '%'
   icon: mdi:water-percent
   device_class: humidity
+switch: []
 select:
 - platform: toptronic
   name: "Betriebswahl L\xFCftung"

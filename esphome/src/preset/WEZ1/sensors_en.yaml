@@ -535,70 +535,6 @@ sensor:
   id: WEZ1_60_254_34_1540
   type: U8
 - platform: toptronic
-  name: MK1 HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21031
-  id: WEZ1_0_0_21031_1546
-  type: U8
-  internal: true
-- platform: toptronic
-  name: YK1+ HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21032
-  id: WEZ1_0_0_21032_1547
-  type: U8
-  internal: true
-- platform: toptronic
-  name: YK1- HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21033
-  id: WEZ1_0_0_21033_1548
-  type: U8
-  internal: true
-- platform: toptronic
-  name: VA1 HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21036
-  id: WEZ1_0_0_21036_1551
-  type: U8
-- platform: toptronic
-  name: VA2 HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21037
-  id: WEZ1_0_0_21037_1552
-  type: U8
-- platform: toptronic
-  name: Activate emissions test
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 10
-  function_number: 1
-  datapoint: 23085
-  id: WEZ1_10_1_23085_1564
-  type: U8
-  internal: true
-- platform: toptronic
   name: Status heat generator control
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
@@ -984,36 +920,6 @@ sensor:
   device_class: power_factor
   state_class: measurement
 - platform: toptronic
-  name: Pump (1)
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 1
-  function_number: 0
-  datapoint: 1020
-  id: WEZ1_1_0_1020_19706
-  type: U8
-- platform: toptronic
-  name: Pump (2)
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 1
-  function_number: 1
-  datapoint: 1020
-  id: WEZ1_1_1_1020_19707
-  type: U8
-- platform: toptronic
-  name: SLP hot water charging pump
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 2
-  function_number: 0
-  datapoint: 1066
-  id: WEZ1_2_0_1066_19754
-  type: U8
-- platform: toptronic
   name: System flow temperature hot water
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
@@ -1156,16 +1062,6 @@ sensor:
   type: U8
   internal: true
 - platform: toptronic
-  name: Collective fault output fault reporting output
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 1099
-  id: WEZ1_0_0_1099_27534
-  type: U8
-- platform: toptronic
   name: Available electrical power, dampened
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
@@ -1283,6 +1179,111 @@ sensor:
   device_class: power_factor
   state_class: measurement
   internal: true
+binary_sensor:
+- platform: toptronic
+  name: MK1 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ1_0_0_21031_1546
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1+ HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ1_0_0_21032_1547
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1- HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ1_0_0_21033_1548
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA1 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21036
+  id: WEZ1_0_0_21036_1551
+  type: U8
+- platform: toptronic
+  name: VA2 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: WEZ1_0_0_21037_1552
+  type: U8
+- platform: toptronic
+  name: Activate emissions test
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ1_10_1_23085_1564
+  type: U8
+  internal: true
+- platform: toptronic
+  name: Pump (1)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 0
+  datapoint: 1020
+  id: WEZ1_1_0_1020_19706
+  type: U8
+- platform: toptronic
+  name: Pump (2)
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 1
+  function_number: 1
+  datapoint: 1020
+  id: WEZ1_1_1_1020_19707
+  type: U8
+- platform: toptronic
+  name: SLP hot water charging pump
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1066
+  id: WEZ1_2_0_1066_19754
+  type: U8
+- platform: toptronic
+  name: Collective fault output fault reporting output
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 1099
+  id: WEZ1_0_0_1099_27534
+  type: U8
 text_sensor:
 - platform: toptronic
   name: Heating operation choice (1)

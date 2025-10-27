@@ -187,62 +187,6 @@ number:
   icon: mdi:temperature-celsius
   device_class: temperature
 - platform: toptronic
-  name: CM1 sortie HW
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21031
-  id: WEZ1_0_0_21031_1546_set
-  type: U8
-  min_value: 0
-  max_value: 1
-  step: 1
-  decimal: 0
-- platform: toptronic
-  name: YK1+ sortie HW
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21032
-  id: WEZ1_0_0_21032_1547_set
-  type: U8
-  min_value: 0
-  max_value: 1
-  step: 1
-  decimal: 0
-- platform: toptronic
-  name: YK1- sortie HW
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21033
-  id: WEZ1_0_0_21033_1548_set
-  type: U8
-  min_value: 0
-  max_value: 1
-  step: 1
-  decimal: 0
-- platform: toptronic
-  name: "Activer test d'\xE9mission"
-  device_type: WEZ
-  device_addr: ${TT_WEZ1_addr}
-  device_id: ${TT_WEZ1_device_id}
-  function_group: 10
-  function_number: 1
-  datapoint: 23085
-  id: WEZ1_10_1_23085_1564_set
-  type: U8
-  min_value: 0
-  max_value: 1
-  step: 1
-  decimal: 0
-- platform: toptronic
   name: "D\xE9p. consigne demande const. refroid."
   device_type: WEZ
   device_addr: ${TT_WEZ1_addr}
@@ -383,6 +327,47 @@ number:
   unit_of_measurement: '%'
   icon: mdi:percent
   device_class: power_factor
+switch:
+- platform: toptronic
+  name: CM1 sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ1_0_0_21031_1546_set
+  type: U8
+- platform: toptronic
+  name: YK1+ sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ1_0_0_21032_1547_set
+  type: U8
+- platform: toptronic
+  name: YK1- sortie HW
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ1_0_0_21033_1548_set
+  type: U8
+- platform: toptronic
+  name: "Activer test d'\xE9mission"
+  device_type: WEZ
+  device_addr: ${TT_WEZ1_addr}
+  device_id: ${TT_WEZ1_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ1_10_1_23085_1564_set
+  type: U8
 select:
 - platform: toptronic
   name: "S\xE9lection fonctionnement chauffage (1)"

@@ -106,71 +106,6 @@ sensor:
   device_class: power_factor
   state_class: measurement
 - platform: toptronic
-  name: MK1 HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21031
-  id: WEZ2_0_0_21031_1679
-  type: U8
-  internal: true
-- platform: toptronic
-  name: YK1+ HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21032
-  id: WEZ2_0_0_21032_1680
-  type: U8
-  internal: true
-- platform: toptronic
-  name: YK1- HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21033
-  id: WEZ2_0_0_21033_1681
-  type: U8
-  internal: true
-- platform: toptronic
-  name: SLP HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21035
-  id: WEZ2_0_0_21035_1683
-  type: U8
-  internal: true
-- platform: toptronic
-  name: VA2 HW output
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 0
-  function_number: 0
-  datapoint: 21037
-  id: WEZ2_0_0_21037_1685
-  type: U8
-- platform: toptronic
-  name: Activate emissions test
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 10
-  function_number: 1
-  datapoint: 23085
-  id: WEZ2_10_1_23085_1697
-  type: U8
-  internal: true
-- platform: toptronic
   name: Status heat generator control
   device_type: WEZ
   device_addr: ${TT_WEZ2_addr}
@@ -297,16 +232,6 @@ sensor:
   device_class: temperature
   state_class: measurement
 - platform: toptronic
-  name: SLP hot water charging pump
-  device_type: WEZ
-  device_addr: ${TT_WEZ2_addr}
-  device_id: ${TT_WEZ2_device_id}
-  function_group: 2
-  function_number: 0
-  datapoint: 1066
-  id: WEZ2_2_0_1066_19757
-  type: U8
-- platform: toptronic
   name: Eletrical power WEZ
   device_type: WEZ
   device_addr: ${TT_WEZ2_addr}
@@ -407,6 +332,82 @@ sensor:
   device_class: power_factor
   state_class: measurement
   internal: true
+binary_sensor:
+- platform: toptronic
+  name: MK1 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21031
+  id: WEZ2_0_0_21031_1679
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1+ HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21032
+  id: WEZ2_0_0_21032_1680
+  type: U8
+  internal: true
+- platform: toptronic
+  name: YK1- HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21033
+  id: WEZ2_0_0_21033_1681
+  type: U8
+  internal: true
+- platform: toptronic
+  name: SLP HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21035
+  id: WEZ2_0_0_21035_1683
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA2 HW output
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: WEZ2_0_0_21037_1685
+  type: U8
+- platform: toptronic
+  name: Activate emissions test
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 10
+  function_number: 1
+  datapoint: 23085
+  id: WEZ2_10_1_23085_1697
+  type: U8
+  internal: true
+- platform: toptronic
+  name: SLP hot water charging pump
+  device_type: WEZ
+  device_addr: ${TT_WEZ2_addr}
+  device_id: ${TT_WEZ2_device_id}
+  function_group: 2
+  function_number: 0
+  datapoint: 1066
+  id: WEZ2_2_0_1066_19757
+  type: U8
 text_sensor:
 - platform: toptronic
   name: Hot water operation choice
