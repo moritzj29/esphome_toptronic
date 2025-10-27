@@ -257,6 +257,36 @@ if __name__ == "__main__":
         before_translate=wez_before_translate, 
         #prefix="WEZ2"
         ),
+        Preset('PS', Filter(unit_names=["PS"], unit_ids=[143], register_addresses=[
+            17326,
+            17327,
+            17328,
+            17329,
+            17330,
+            17331,
+            17332,
+            17333,
+            17334,
+            17335,
+            17336,
+            17337,
+            17338,
+            17384,
+            17385,
+            17386,
+            17387,
+            19279,
+            19280,
+            19281,
+            19282,
+            19283,
+            28839,
+            28840,
+        ]),
+        #before_dump=wez_before_dump,
+        #before_translate=wez_before_translate, 
+        #prefix=""
+        ),
         ## filter the row number, not the datapoint :  based on UniName=HV, UnitId=520
         Preset('HV', Filter(rows=[ 
             22786, # Op. choice ventilation

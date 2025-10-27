@@ -1,0 +1,178 @@
+number:
+- platform: toptronic
+  name: VA0-10V/PWM hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21078
+  id: PS_0_0_21078_17336_set
+  type: U8
+  min_value: 0
+  max_value: 100
+  step: 5
+  decimal: 0
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+- platform: toptronic
+  name: VA0-10V/PWM-FE1 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21079
+  id: PS_0_0_21079_17337_set
+  type: U8
+  min_value: 0
+  max_value: 100
+  step: 5
+  decimal: 0
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+- platform: toptronic
+  name: VA0-10V/PWM-FE2 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21080
+  id: PS_0_0_21080_17338_set
+  type: U8
+  min_value: 0
+  max_value: 100
+  step: 5
+  decimal: 0
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+- platform: toptronic
+  name: Smart-Grid (offset) accumulo-nom risc
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 6050
+  id: PS_21_0_6050_28839_set
+  type: S16
+  min_value: 0
+  max_value: 900
+  step: 5
+  decimal: 1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-kelvin
+  device_class: temperature
+- platform: toptronic
+  name: Smart-Grid (offset) accumulo-nom raff
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 6051
+  id: PS_21_0_6051_28840_set
+  type: S16
+  min_value: -300
+  max_value: 0
+  step: 5
+  decimal: 1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-kelvin
+  device_class: temperature
+switch:
+- platform: toptronic
+  name: VA1 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21036
+  id: PS_0_0_21036_17327_set
+  type: U8
+- platform: toptronic
+  name: VA2 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: PS_0_0_21037_17328_set
+  type: U8
+- platform: toptronic
+  name: VA3 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21038
+  id: PS_0_0_21038_17329_set
+  type: U8
+- platform: toptronic
+  name: VA1-FE1 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21039
+  id: PS_0_0_21039_17330_set
+  type: U8
+- platform: toptronic
+  name: VA2-FE1 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21040
+  id: PS_0_0_21040_17331_set
+  type: U8
+- platform: toptronic
+  name: VA3-FE1 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21041
+  id: PS_0_0_21041_17332_set
+  type: U8
+- platform: toptronic
+  name: VA1-FE2 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21043
+  id: PS_0_0_21043_17333_set
+  type: U8
+- platform: toptronic
+  name: VA2-FE2 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21044
+  id: PS_0_0_21044_17334_set
+  type: U8
+- platform: toptronic
+  name: VA3-FE2 hardware-uscita
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21045
+  id: PS_0_0_21045_17335_set
+  type: U8
+select: []

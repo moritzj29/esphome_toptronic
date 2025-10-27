@@ -1,0 +1,339 @@
+sensor:
+- platform: toptronic
+  name: VA0-10V/PWM sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21078
+  id: PS_0_0_21078_17336
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: VA0-10V/PWM-FE1 sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21079
+  id: PS_0_0_21079_17337
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: VA0-10V/PWM-FE2 sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21080
+  id: PS_0_0_21080_17338
+  type: U8
+  unit_of_measurement: '%'
+  icon: mdi:percent
+  device_class: power_factor
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Statut accumulateur
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 23082
+  id: PS_21_0_23082_17384
+  type: U8
+- platform: toptronic
+  name: Valeur consigne accumulateur
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 1015
+  id: PS_21_0_1015_17385
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: "Accumulateur PF/KPF2 r\xE9el"
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 15
+  id: PS_21_0_15_17386
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: "Accumulateur PF2/KPF r\xE9el"
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 17
+  id: PS_21_0_17_17387
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 1
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21120
+  id: PS_0_0_21120_19279
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 2
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21121
+  id: PS_0_0_21121_19280
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 3
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21122
+  id: PS_0_0_21122_19281
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 4
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21123
+  id: PS_0_0_21123_19282
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Info 5
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21124
+  id: PS_0_0_21124_19283
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-celsius
+  device_class: temperature
+  state_class: measurement
+- platform: toptronic
+  name: Val cons acc chauff (offset) Smart-Grid
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 6050
+  id: PS_21_0_6050_28839
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-kelvin
+  device_class: temperature
+  state_class: measurement
+  internal: true
+- platform: toptronic
+  name: Val cons acc refroid (offset) Smart-Grid
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 21
+  function_number: 0
+  datapoint: 6051
+  id: PS_21_0_6051_28840
+  type: S16
+  accuracy_decimals: 1
+  filters:
+  - multiply: 0.1
+  unit_of_measurement: "\xB0C"
+  icon: mdi:temperature-kelvin
+  device_class: temperature
+  state_class: measurement
+  internal: true
+binary_sensor:
+- platform: toptronic
+  name: Activer le test de relais
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 23084
+  id: PS_0_0_23084_17326
+  type: U8
+- platform: toptronic
+  name: VA1 sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21036
+  id: PS_0_0_21036_17327
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA2 sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21037
+  id: PS_0_0_21037_17328
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA3 sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21038
+  id: PS_0_0_21038_17329
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA1-FE1 Sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21039
+  id: PS_0_0_21039_17330
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA2-FE1 Sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21040
+  id: PS_0_0_21040_17331
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA3-FE1 Sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21041
+  id: PS_0_0_21041_17332
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA1-FE2 Sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21043
+  id: PS_0_0_21043_17333
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA2-FE2 Sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21044
+  id: PS_0_0_21044_17334
+  type: U8
+  internal: true
+- platform: toptronic
+  name: VA3-FE2 Sortie HW
+  device_type: PS
+  device_addr: ${TT_PS_addr}
+  device_id: ${TT_PS_device_id}
+  function_group: 0
+  function_number: 0
+  datapoint: 21045
+  id: PS_0_0_21045_17335
+  type: U8
+  internal: true
+text_sensor: []
