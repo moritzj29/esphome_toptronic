@@ -86,7 +86,22 @@ class Datapoint:
             **device_units,
             **internal,
         }
-      
+
+    def into_binary_sensor(self) -> dict:
+        assert self.type_name != 'LIST'
+        assert (self.min == 0 and self.max == 1 and self.steps == 1)
+                
+        # Set sensor internal if writable (inputs)
+        internal = { 
+            'internal': True,
+        } if self.writable else {} 
+
+        return {
+            **self.__toptronic_base(),
+            'id': self.get_id(),
+            'type': self.type_name,
+            **internal,
+        }  
     
     def into_text_sensor(self) -> dict:
         assert self.type_name == 'LIST'
@@ -117,6 +132,15 @@ class Datapoint:
             'step': self.steps,
             'decimal': self.decimal,
             **device_units,
+        }
+    
+    def into_switch(self) -> dict:
+        assert self.writable and self.type_name != 'LIST'
+
+        return {
+            **self.__toptronic_base(),
+            'id': self.get_id()+"_set",
+            'type': self.type_name,
         }
 
 
@@ -234,7 +258,8 @@ def parse_datapoints(wb: Workbook, filter: Filter, preset_id: str, prefix: str =
     return datapoints
 
 def dump_sensors(datapoints: List[Datapoint], path: str):
-    sensors = [dp.into_sensor() for dp in datapoints if dp.type_name != 'LIST']
+    sensors = [dp.into_sensor() for dp in datapoints if dp.type_name != 'LIST' and not (dp.min == 0 and dp.max == 1 and dp.steps == 1)]
+    binary_sensors = [dp.into_binary_sensor() for dp in datapoints if dp.type_name != 'LIST' and (dp.min == 0 and dp.max == 1 and dp.steps == 1)]
     text_sensors = [dp.into_text_sensor() for dp in datapoints if dp.type_name == 'LIST']
     
     if len(sensors) == 0 and len(text_sensors) == 0:
@@ -242,6 +267,7 @@ def dump_sensors(datapoints: List[Datapoint], path: str):
 
     all_sensors = {
         **({'sensor': sensors} if len(sensors) > 0 else {}),
+        **({'binary_sensor': binary_sensors} if len(binary_sensors) > 0 else {}),
         **({'text_sensor': text_sensors} if len(text_sensors) > 0 else {}),
     }
 
@@ -249,7 +275,8 @@ def dump_sensors(datapoints: List[Datapoint], path: str):
         yaml.dump(all_sensors, f, encoding="utf-8", sort_keys=False)
 
 def dump_inputs(datapoints: List[Datapoint], path: str):
-    numbers = [dp.into_number() for dp in datapoints if dp.writable and dp.type_name != 'LIST']
+    numbers = [dp.into_number() for dp in datapoints if dp.writable and dp.type_name != 'LIST' and not (dp.min == 0 and dp.max == 1 and dp.steps == 1)]
+    switches = [dp.into_switch() for dp in datapoints if dp.writable and dp.type_name != 'LIST' and (dp.min == 0 and dp.max == 1 and dp.steps == 1)]
     selects = [dp.into_select() for dp in datapoints if dp.writable and dp.type_name == 'LIST']
 
     if len(numbers) == 0 and len(selects) == 0:
@@ -257,6 +284,7 @@ def dump_inputs(datapoints: List[Datapoint], path: str):
 
     all_inputs = {
         **({'number': numbers} if len(numbers) > 0 else {}),
+        **({'switch': switches} if len(switches) > 0 else {}),
         **({'select': selects} if len(selects) > 0 else {}),
     }
 

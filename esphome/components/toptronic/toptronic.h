@@ -1,9 +1,10 @@
-
 #include "esphome/core/component.h"
 #include "esphome/components/sensor/sensor.h"
 #include "esphome/components/select/select.h"
 #include "esphome/components/number/number.h"
 #include "esphome/components/text_sensor/text_sensor.h"
+#include "esphome/components/binary_sensor/binary_sensor.h"
+#include "esphome/components/switch/switch.h"
 #include "esphome/components/canbus/canbus.h"
 #include "esphome/core/helpers.h"
 
@@ -25,6 +26,8 @@ enum TypeName {
 enum SensorType {
     SENSOR,
     TEXTSENSOR,
+    BINARYSENSOR,
+    SWITCHTYPE,
 };
 
 uint32_t build_can_id(uint16_t sender_id, uint16_t receiver_mask);
@@ -68,7 +71,15 @@ class TopTronicSensor: public sensor::Sensor, public TopTronicBase {
 
     float parse_value(std::vector<uint8_t> value);
     SensorType type() override { return SENSOR; };
+   protected:
+    TypeName type_;
+};
 
+class TopTronicBinarySensor: public binary_sensor::BinarySensor, public TopTronicBase {
+   public:
+    void set_type(TypeName type) { type_ = type; }
+    bool parse_value(std::vector<uint8_t> value);
+    SensorType type() override { return BINARYSENSOR; };
    protected:
     TypeName type_;
 };
@@ -84,6 +95,16 @@ class TopTronicNumber: public number::Number, public TopTronicBase {
    protected:
     TypeName type_;
     float multiplier_ = 1;
+};
+
+class TopTronicSwitch: public switch_::Switch, public TopTronicBase {
+   public:
+    void set_type(TypeName type) { type_ = type; }
+    SensorType type() override { return SWITCHTYPE; };
+    void write_state(bool state) override;
+    void control(bool state);
+   protected:
+    TypeName type_;
 };
 
 class TopTronicTextSensor: public text_sensor::TextSensor, public TopTronicBase {

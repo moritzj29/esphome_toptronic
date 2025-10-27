@@ -174,6 +174,12 @@ float TopTronicSensor::parse_value(std::vector<uint8_t> value) {
     return bytesToFloat(value, type_);
 }
 
+bool TopTronicBinarySensor::parse_value(std::vector<uint8_t> value) {
+    // Interpret any non-zero as true
+    float v = bytesToFloat(value, type_);
+    return v != 0.0f;
+}
+
 void TopTronicNumber::control(float value) {
     float v = multiplier_ * value;
     std::vector<uint8_t> bytes = floatToBytes(v, type_);
@@ -182,6 +188,19 @@ void TopTronicNumber::control(float value) {
     set_callback_.call(data);
 
     ESP_LOGI(TAG, "[SET] %s: %f, Data: 0x%s", get_name().c_str(), v, hex_str(&data[0], data.size()).c_str());
+}
+
+void TopTronicSwitch::control(bool state) {
+    float v = state ? 1.0f : 0.0f;
+    std::vector<uint8_t> bytes = floatToBytes(v, type_);
+    std::vector<uint8_t> data = build_set_request(function_group_, function_number_, datapoint_, bytes);
+    set_callback_.call(data);
+    ESP_LOGI(TAG, "[SET] %s: %s, Data: 0x%s", get_name().c_str(), state ? "ON" : "OFF", hex_str(data.data(), static_cast<int>(data.size())).c_str());
+}
+
+void TopTronicSwitch::write_state(bool state) {
+    control(state);
+    this->publish_state(state);
 }
 
 std::string TopTronicTextSensor::parse_value(std::vector<uint8_t> value) {
@@ -266,20 +285,24 @@ void TopTronic::link_inputs() {
         for (const auto &i : device->inputs) {
             auto inputBase = i.second;
             auto sensorBase = get_sensor(inputBase->get_device_id(), inputBase->get_id());
-            if (sensorBase == NULL) {
-                continue;
-            }
-            if (sensorBase->type() == SENSOR) {
+            if (sensorBase == NULL) continue;
+            if (sensorBase->type() == SENSOR && inputBase->type() == SENSOR) {
                 auto sensor = (TopTronicSensor*) sensorBase;
                 auto input = (TopTronicNumber*) inputBase;
                 sensor->add_on_raw_state_callback([input](float state) -> void {
                     float divider = input->get_multiplier();
                     input->publish_state(state / divider);
                 });
-            } else if (sensorBase->type() == TEXTSENSOR) {
+            } else if (sensorBase->type() == TEXTSENSOR && inputBase->type() == TEXTSENSOR) {
                 auto sensor = (TopTronicTextSensor*) sensorBase;
                 auto input = (TopTronicSelect*) inputBase;
                 sensor->add_on_raw_state_callback([input](std::string state) -> void {
+                    input->publish_state(state);
+                });
+            } else if (sensorBase->type() == BINARYSENSOR && inputBase->type() == SWITCHTYPE) {
+                auto sensor = (TopTronicBinarySensor*) sensorBase;
+                auto input = (TopTronicSwitch*) inputBase;
+                sensor->add_on_state_callback([input](bool state) -> void {
                     input->publish_state(state);
                 });
             }
@@ -406,6 +429,11 @@ void TopTronic::interpret_message(std::vector<uint8_t> data, uint32_t can_id, bo
     } else if (sensorBase->type() == TEXTSENSOR) {
         TopTronicTextSensor *sensor = (TopTronicTextSensor*)sensorBase;
         std::string value = sensor->parse_value(std::vector<uint8_t>(data.begin() + 5, data.end()));
+        sensor->publish_state(value);
+        log_response_frame(data, can_id, sensor->get_name());
+    } else if (sensorBase->type() == BINARYSENSOR) {
+        TopTronicBinarySensor *sensor = (TopTronicBinarySensor*)sensorBase;
+        bool value = sensor->parse_value(std::vector<uint8_t>(data.begin() + 5, data.end()));
         sensor->publish_state(value);
         log_response_frame(data, can_id, sensor->get_name());
     }
