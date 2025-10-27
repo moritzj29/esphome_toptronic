@@ -266,9 +266,9 @@ def dump_sensors(datapoints: List[Datapoint], path: str):
         return
 
     all_sensors = {
-        **({'sensor': sensors} if len(sensors) > 0 else {}),
-        **({'binary_sensor': binary_sensors} if len(binary_sensors) > 0 else {}),
-        **({'text_sensor': text_sensors} if len(text_sensors) > 0 else {}),
+        **({'sensor': sensors}),
+        **({'binary_sensor': binary_sensors}),
+        **({'text_sensor': text_sensors}),
     }
 
     with open(path, 'w', encoding='utf-8') as f:
@@ -283,9 +283,9 @@ def dump_inputs(datapoints: List[Datapoint], path: str):
         return
 
     all_inputs = {
-        **({'number': numbers} if len(numbers) > 0 else {}),
-        **({'switch': switches} if len(switches) > 0 else {}),
-        **({'select': selects} if len(selects) > 0 else {}),
+        **({'number': numbers}),
+        **({'switch': switches}),
+        **({'select': selects}),
     }
 
     with open(path, 'w', encoding='utf-8') as f:
